@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Admin Projekat</title>
+        <!-- Vendor styles -->
+        <link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+        <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+
+        <!-- Za select tag -->
+        <link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+        <!-- App styles -->
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+
+    <body data-sa-theme="3">
+        <main class="main"> 
+
+            <!-- Header -->
+            <header class="header">
+
+                <div class="navigation-trigger hidden-xl-up" data-ma-action="aside-open" data-ma-target=".sidebar">
+                    <i class="zmdi zmdi-menu"></i>
+                </div>
+
+                <div class="logo hidden-sm-down">
+                    <h1><a href="index.html">ADMIN PANEL - PROJEKAT</a></h1>
+                </div>
+                <!-- Menu -->
+                
+                    <ul class="nav mr-auto p-2">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Početna</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">FronEnd</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">BackEnd</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">CV</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                      </li>
+                    </ul>
+                <!-- Search -->
+                    <form class="search">
+                    <div class="search__inner">
+                        <input type="text" class="search__text" placeholder="Search for people, files, documents...">
+                        <i class="zmdi zmdi-search search__helper" data-sa-action="search-close"></i>
+                    </div>
+                    </form>
+                <!-- EndOfSearch -->
+                <!-- Sat -->
+                <div class="clock hidden-md-down">
+                    <div class="time">
+                        <span class="time__hours"></span>
+                        <span class="time__min"></span>
+                        <span class="time__sec"></span>
+                    </div>
+                </div>
+                <!-- EndOfSat -->
+
+                    <!-- User login -->
+                    <div class="p-2">
+                        <div class="user justify-content-end" >
+                        <div class="user__info " data-toggle="dropdown">
+                            <img class="user__img" src="img/slike/Avatars/1.png" alt="">
+                            <div>
+                                <div class="user__name">Malinda Hollaway</div>
+                                <div class="user__email">malinda-h@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="">View Profile</a>
+                            <a class="dropdown-item" href="">Settings</a>
+                            <a class="dropdown-item" href="">Logout</a>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- end user login -->
+                    <!-- end Menu -->
+                 <!-- Other Header Contents -->
+            </header>
+
+
+<!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="scrollbar-inner">
+                   <!-- Sidebar Contents -->
+                   <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Dodaj novi projekat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Spisak projekata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Spisak obrisanih projekata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Napravi novu kategoriju</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Spisak kategorija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Napravi novi tag</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Spisak tagova</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Spisak usera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Unesite novog usera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Moj profil</a>
+                        </li>                       
+                    </ul>
+                </div>
+            </aside>
+<!-- EndOfSidebar -->
+
+<!-- Contents -->
+<section class="content">
+            <div class="content__inner">
+    <header class="content__title">
+        <h1>Blog - Admin Dashboard</h1>
+    </header>
+<!-- Kartica -->
+<section id="sviPostovi">
+<div class="card col-lg-12">
+    <div class="card-header">Spisak projekata</div>
+    <div class="card-body">
+<!-- Tabela -->
+<table class="tabela-admin table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">Slika</th>
+        <th scope="col">Naslov</th>
+        <th scope="col">Kategorija</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Izmeni</th>
+        <th scope="col">Obrisi</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr >
+        <td><img src="img/slike/card/Php-1.png" alt="img/slike/card/default.png" width="90px" height="60px"></td>        
+        <td>Neki naslov</td>
+        <td>Kategorija 1</td>
+        <td>Tag 1</td>
+        <td><input class="btn btn-info btn-xs" type="submit" value="Promeni"></td>
+        <td><input class="btn btn-danger btn-xs" type="submit" value="Obrisi"></td>
+    </tr>
+    <tr >
+        <td><img src="img/slike/card/Php-2.png" alt="img/slike/card/default.png" width="90px" height="60px"></td>        
+        <td>Neki naslov 2</td>
+        <td>Kategorija 2</td>
+        <td>Tag 2</td>
+        <td><input class="btn btn-info btn-xs" type="submit" value="Promeni"></td>
+        <td><input class="btn btn-danger btn-xs" type="submit" value="Obrisi"></td>
+    </tr>
+  </tbody>
+</table>
+<!-- EndOfTabela -->
+    </div>
+</div>
+<!-- EndOfKartica -->    
+</section>
+
+<section id="obrisaniPostovi">
+<!-- Kartica -->
+<div class="card col-lg-9">
+    <div class="card-header">Spisak obrisanih projekata</div>
+    <div class="card-body">
+<!-- Tabela -->
+<table class="tabela-admin table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">Slika</th>
+        <th scope="col">Naslov</th>
+        <th scope="col">Restore</th>
+        <th scope="col">Obrisi trajno</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr >
+        <td><img src="img/slike/card/Php-1.png" alt="img/slike/card/default.png" width="90px" height="60px"></td>        
+        <td>Neki naslov</td>
+        <td><input class="btn btn-warning btn-xs" type="submit" value="Restore"></td>
+        <td><input class="btn btn-danger btn-xs" type="submit" value="Obrisi"></td>
+    </tr>
+    <tr >
+        <td><img src="img/slike/card/Php-1.png" alt="img/slike/card/default.png" width="90px" height="60px"></td>        
+        <td>Neki naslov</td>
+        <td><input class="btn btn-warning btn-xs" type="submit" value="Restore"></td>
+        <td><input class="btn btn-danger btn-xs" type="submit" value="Obrisi"></td>
+    </tr>
+  </tbody>
+</table>
+<!-- EndOfTabela -->
+    </div>
+</div>
+<!-- EndOfKartica -->    
+</section>
+
+<section id="unosPostova">
+<!-- FormaZaUnosPostova -->
+<div class="card col-lg-12">
+    <div class="card-header">Unos novog projekta</div>
+    <div class="card-body">
+      <form action="http://localhost:8000/admin/posts" method="post" enctype="multipart/form-data">
+                            <!-- hidden polje -->
+            <div class="form-group">
+                  <label for="naslov">Naslov</label>
+                  <input type="text" name="naslov" class="form-control">
+            </div>
+            <div class="form-group">
+                  <label for="podnaslov">Naslov</label>
+                  <input type="text" name="podnaslov" class="form-control">
+            </div>
+            <div class="form-group">
+                  <label for="sadrzaj">Sadržaj projekta</label>
+                  <textarea class="form-control textarea-autosize" placeholder="Ovde treba ubaciti sadrzaj projekta" style="overflow: hidden; word-wrap: break-word; height: 81px;" id="summernote" name="sadrzaj"></textarea>
+            </div>
+            <div class="form-group">
+                  <label for="featured">Ubaci sliku</label>
+                  <input type="file" name="slika" class="form-control">
+            </div>
+<!-- Pocetak kolone -->
+<div class="row">
+<!-- Select tag -->
+            <div class="col-sm-3">
+                <h3 class="card-body__title">Odaberite pretežnu kategoriju</h3>
+
+                <div class="form-group">
+                    <div class="select">
+                        <select class="form-control select_custom">
+                            <option value="1">BackEnd</option>
+                            <option value="2">FronEnd</option>
+                            <option value="3">BackEnd+FronEnd</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+<!-- CheckBoxevi za tagove-->
+            <div class="checkbox">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" value="1" name="tags[]" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Početni</span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" value="2" name="tags[]" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Srednji</span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" value="3" name="tags[]" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Napredni</span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="custom-control custom-checkbox">
+                    <input type="checkbox" value="4" name="tags[]" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Specificni</span>
+                </label>
+            </div>                                                        
+<!-- EndOfCheckBoxevi -->                            
+
+</div>                      
+
+            <div class="form-group">
+                  <input type="hidden" name="user_id" class="form-control" value="7">
+                  <input type="hidden" name="_token" value="">
+            </div>
+
+            <div class="form-group">
+                  <label for="linkProjekta">linkProjekta</label>
+                  <input type="text" name="linkProjekta" class="form-control">
+            </div>
+            <div class="form-group">
+                  <label for="linkGitHuba">linkGitHuba</label>
+                  <input type="text" name="linkGitHuba" class="form-control">
+            </div>            
+            <div class="form-group">
+                  <div class="text-center">
+                        <button class="btn btn-success" type="submit">
+                              Upisi post
+                        </button>
+                  </div>
+            </div>
+        </form>
+    </div>
+</div>
+</section>
+<!-- EndOfFormaZaUnosPostova --> 
+
+<!-- UpisivanjeKategorija -->
+<section id="napraviNovuKategoriju">
+    <div class="card col-lg-9">
+        <div class="card-header">Dodati novu kategoriju</div>
+        <div class="card-body">
+            <form action="#" method="post" >
+                                <!-- hidden polje -->
+                <div class="form-group">
+                    <label for="title">Ime kategorije</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <div class="text-center">
+                        <button class="btn btn-success" type="submit">
+                            Upisi novu kategoriju
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- EndOfUpisivanjeKategorija -->
+
+<!-- SpisakKategorija -->
+<section id="spisakKategorija">
+    <div class="card col-lg-9">
+    <div class="card-header">Promeni kategoriju</div>
+        <div class="card-body">
+            <table class="tabela-admin table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ime kategorije</th>
+                    <th scope="col">Menjanje</th>
+                    <th scope="col">Brisanje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>LAravel 5.4</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-xs ">
+                            Promeni
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-xs">
+                            Izbriši
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>HTML</td>
+                    <td>
+                        <a href="http://localhost:8000/admin/category/edit/2" class="btn btn-info btn-xs ">
+                            Promeni           
+                        </a>
+                    </td>
+                    <td>
+                        <a href="http://localhost:8000/admin/category/delete/2" class="btn btn-danger btn-xs">
+                            Izbriši
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- EndOfSpisakKategorija --> 
+
+<!-- NapraviTag -->
+<section id="napraviTag">
+    <div class="card col-lg-9">
+    <div class="card-header">Dodaj tag</div>
+        <div class="card-body">   
+            <form action="#" method="post" >
+                                <!-- hidden polje -->
+                <div class="form-group">
+                    <label for="tag">Ime taga</label>
+                    <input type="text" name="tag" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="funkcionalnost_id">Ime taga</label>
+                    <input type="text" name="funkcionalnost_id" class="form-control">
+                </div>
+                                <div class="form-group">
+                    <label for="tehnologije_id">Ime taga</label>
+                    <input type="text" name="tehnologije_id" class="form-control">
+                </div>
+                                <div class="form-group">
+                    <label for="biblioteke_id">Ime taga</label>
+                    <input type="text" name="biblioteke_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <div class="text-center">
+                        <button class="btn btn-success" type="submit">
+                            Upisi novi tag
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>   
+</section>
+<!-- EndOfNapraviTag -->
+
+
+<!-- PromeniTag -->
+<section id="promeniTag">
+    <div class="card col-lg-9">
+    <div class="card-header">Promeni tag</div>
+        <div class="card-body">  
+        <table class="tabela-admin table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ime taga</th>
+                <th scope="col">Menjanje</th>
+                <th scope="col">Brisanje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">2</th>
+                <td>Početni</td>
+                <td>
+                    <a href="#" class="btn btn-info btn-xs ">Promeni</a>            
+                </td>
+                <td>
+                    <form method="POST" action="#" accept-charset="UTF-8">
+                                <!-- hidden polje -->
+                    <input class="btn btn-danger btn-xs" type="submit" value="Obrisi">
+                    </form>
+                </td>    
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>   
+</section>
+<!-- EndOfPromeniTag -->
+
+<!-- PromeniUsera -->
+<section id="promeniUsera">
+    <div class="card col-lg-9">
+    <div class="card-header">Promeni usera</div>
+        <div class="card-body">  
+        <table class="tabela-admin table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Slika</th>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Ovlascenja</th>
+                    <th scope="col">Obrisi</th>
+                </tr>
+                </thead>
+                <tbody>                               
+                    <tr>
+                        <td>
+                           <img src="img/slike/Avatars/66.jpg" alt="" width="60px" height="60px" style="border-radius: 50%;">
+                        </td>
+                        <td>
+                            Admin
+                        </td>
+                        <td>
+                            <a href="http://localhost:8000/admin/user/notAdmin/1" class="btn btn-xs btn-danger">Ukloni ovlascenje</a>
+                        </td>
+                        <td>
+                            <a href="http://localhost:8000/admin/user/delete/1" class="btn btn-xs btn-danger">Obrisi usera</a>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                           <img src="img/slike/Avatars/85.jpg" alt="" width="60px" height="60px" style="border-radius: 50%;">
+                        </td>
+                        <td>
+                            Mr. Miguel McGlynn
+                        </td>
+                        <td>
+                            <a href="http://localhost:8000/admin/user/admin/2" class="btn btn-xs btn-success">Dodaj ovlascenje</a>
+                        </td>
+                        <td>
+                            <a href="http://localhost:8000/admin/user/delete/2" class="btn btn-xs btn-danger">Obrisi usera</a>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>            
+    </div>
+    </div>
+</section>
+<!-- EndOfPromeniUsera -->
+
+<!-- UnesiUsera -->
+<section id="unesiUsera">
+    <div class="card col-lg-9">
+    <div class="card-header">Unesite podatke za usera</div>
+        <div class="card-body">
+        <form action="#" method="post" >
+            <!-- hidden polje -->
+            <div class="form-group">
+                <label for="imePrezime">Ime i prezime</label>
+                <input type="text" name="imePrezime" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">User name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                  <label for="avatar">Ubaci sliku</label>
+                  <input type="file" name="avatar" class="form-control">
+            </div>
+            <div class="text-center">
+            <input class="btn btn-success btn-xs" type="submit" value="Dodaj usera">
+            </div>
+        </form>
+        </div>
+    </div>
+</section>
+<!-- EndOfUnesiUsera -->
+
+<!-- SettingsController -->
+<section id="settings">
+    <div class="card col-lg-9">
+    <div class="card-header">Unesite osnovne podatke</div>
+        <div class="card-body">
+            <form action="#" method="post" >
+                <!-- hidden polje -->
+            <div class="form-group">
+                <label for="imeSajta">Ime sajta</label>
+                <input type="text" name="imeSajta" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="adresa">Adresa</label>
+                <input type="text" name="adresa" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="text" name="telefon" class="form-control">
+            </div>    
+            <div class="text-center">
+            <input class="btn btn-success btn-xs" type="submit" value="Upisi podatke">
+            </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- EndOfSettings -->
+
+
+</div>
+</section>
+<!-- EndOfContent -->
+
+            <!-- Footer -->
+            <footer class="footer">
+                 <!-- Footer Contents -->
+            </footer>
+        </main>
+
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <!-- App functions -->
+        <script src="js/app.min.js"></script>
+        <!-- Za select tag -->
+        <script type="text/javascript" src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+    </body>
+</html>

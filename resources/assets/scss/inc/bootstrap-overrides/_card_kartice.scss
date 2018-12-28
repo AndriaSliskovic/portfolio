@@ -1,0 +1,88 @@
+.card-title_1 {
+  font-size: 1.24rem;
+  line-height: 140%;
+  margin-top: -5px;
+  height: 50px;//
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.card-subtitle_1 {
+  color: $text-muted;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: -1.45rem;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.card_1 > .actions,
+.card-body_1 .actions {
+  position: absolute;
+  right: 15px;
+  z-index: 2;
+  top: 18px;
+}
+
+[class*="card-img"] {
+  width: 100%;
+    height: 200px;
+}
+
+.card-link_1 {
+  text-transform: uppercase;
+  font-size: 0.98rem;
+  color: $text-muted;
+  font-weight: $font-weight-bold;
+  display: inline-block;
+  margin-top: 1rem;
+  @include transition(color 300ms);
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.card-body_1 {
+  max-height: 250px;//
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card-body__title_1 {
+  font-size: 1.15rem;
+  color: $headings-color;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.card--fullscreen_1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $header-z-index + 1;
+  background-color: $bg-highlighted-darkest;
+  overflow: auto;
+}
+
+.card-header_1 {
+  padding: 1.2rem $card-spacer-x;
+}
+.card-body_1 .read-more { 
+  position: absolute; 
+  bottom: 0; 
+  left: 0;
+  width: 100%; 
+  text-align: center; 
+  margin: 0; 
+  //padding: 30px 0; 
+  
+  /* "transparent" only works here because == rgba(0,0,0,0) */
+  background-image: linear-gradient(to bottom, transparent, $bg-highlighted-darkest);
+}

@@ -1,0 +1,17 @@
+.tabela-admin td {
+    vertical-align: middle;
+    font-size: 1.1rem;
+  }
+
+.form-control option{
+	background-color: $indigo;
+}
+.card_1 {
+  margin-bottom: $card-columns-margin;
+  box-shadow: $card-shadow;
+  &:not([class*="border-"]) {
+    border: 0;
+  }
+}
+
+

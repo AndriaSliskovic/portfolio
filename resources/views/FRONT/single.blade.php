@@ -38,7 +38,7 @@
             </div>
             @endif
             @if($projekat->linkGitHuba)
-            <a href="{{$projekat->linkGitHuba}}" title="Link prema GitHub-u" class="badge badge-info">
+            <a href="{{$projekat->linkGitHuba}}" title="Link prema GitHub-u" class="badge badge-info" target=”_blank”>
                 <h4>Link prema GitHub-u</h4>
             </a>
                 @else
